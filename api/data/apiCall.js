@@ -37,8 +37,41 @@ async function readClassement() {
   }
 }
 
+async function writePlayerStats() {
+  let options = {
+    method: 'GET',
+    url: 'https://api-football-v1.p.rapidapi.com/v2/players/team/82/2019-2020',
+    headers: {
+      'x-rapidapi-host': 'api-football-v1.p.rapidapi.com',
+      'x-rapidapi-key': process.env.KEY_API_FOOTBALL
+    }
+  };
+
+  await request(options, async function (error, response, body) {
+    if (error) throw new Error(error);
+    //let data = await JSON.stringify(body);
+    try {
+      await fs.writeFile('./api/data/playersStats.json', body); // need to be in an async function
+      console.log("Players stats updated at " + new Date())
+    } catch (error) {
+      console.log(error)
+    }
+  });
+}
+
+async function readPlayerStats() {
+
+  try {
+    const data = await fs.readFile('./api/data/playersStats.json'); // need to be in an async function
+    let student = await JSON.parse(data);
+    return student;
+  } catch (error) {
+    console.log(error)
+  }
+}
 
 exports.writeClassement = writeClassement
 exports.readClassement = readClassement
-
+exports.writePlayerStats= writePlayerStats
+exports.readPlayerStats = readPlayerStats
 

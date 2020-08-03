@@ -1,0 +1,158 @@
+
+/*------------------------------------
+- COLOR BleuCustom
+------------------------------------*/
+
+$bleucustom_t1: #0a2e53;
+$bleucustom_t2: #041425;
+$bleucustom_t3: #1b7ce0;
+$bleucustom_t4: #2e89e5;
+$bleucustom_t5: #000000;
+$bleucustom_t6: #020d17;
+$bleucustom_t7: #061c33;
+$bleucustom_t8: #000000;
+$bleucustom_t9: #4093e8;
+
+$bleucustom_shadow: rgba(10, 46, 83, 0.5);
+$bleucustom_text_color_dark_bright: #fff;
+
+
+.alert-BleuCustom {
+  color: $bleucustom_t5;
+  background-color: $bleucustom_t9;
+  border-color: $bleucustom_t4;
+}
+
+.alert-BleuCustom hr {
+  border-top-color: $bleucustom_t3;
+}
+
+.alert-BleuCustom .alert-link {
+  color: $bleucustom_t8;
+}
+
+.badge-BleuCustom {
+  color: $bleucustom_text_color_dark_bright;
+  background-color: $bleucustom_t1;
+}
+
+.badge-BleuCustom[href]:hover, .badge-BleuCustom[href]:focus {
+  color: $bleucustom_text_color_dark_bright;
+  background-color: $bleucustom_t2;
+}
+
+.bg-BleuCustom {
+  background-color: $bleucustom_t1 !important;
+}
+
+a.bg-BleuCustom:hover, a.bg-BleuCustom:focus,
+button.bg-BleuCustom:hover,
+button.bg-BleuCustom:focus {
+  background-color: $bleucustom_t2 !important;
+}
+
+.border-BleuCustom {
+  border-color: $bleucustom_t1 !important;
+}
+
+.btn-BleuCustom {
+  color: $bleucustom_text_color_dark_bright;
+  background-color: $bleucustom_t1;
+  border-color: $bleucustom_t1;
+}
+
+.btn-BleuCustom:hover {
+  color: $bleucustom_text_color_dark_bright;
+  background-color: $bleucustom_t7;
+  border-color: $bleucustom_t2;
+}
+
+.btn-BleuCustom:focus, .btn-BleuCustom.focus {
+  box-shadow: 0 0 0 0.2rem $bleucustom_shadow;
+}
+
+.btn-BleuCustom.disabled, .btn-BleuCustom:disabled {
+  color: $bleucustom_text_color_dark_bright;
+  background-color: $bleucustom_t1;
+  border-color: $bleucustom_t1;
+}
+
+.btn-BleuCustom:not(:disabled):not(.disabled):active, .btn-BleuCustom:not(:disabled):not(.disabled).active, .show > .btn-BleuCustom.dropdown-toggle {
+  color: $bleucustom_text_color_dark_bright;
+  background-color: $bleucustom_t2;
+  border-color: $bleucustom_t6;
+}
+
+.btn-BleuCustom:not(:disabled):not(.disabled):active:focus, .btn-BleuCustom:not(:disabled):not(.disabled).active:focus, .show > .btn-BleuCustom.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem $bleucustom_shadow;
+}
+
+.btn-outline-BleuCustom {
+  color: $bleucustom_t1;
+  background-color: transparent;
+  border-color: $bleucustom_t1;
+}
+
+.btn-outline-BleuCustom:hover {
+  color: $bleucustom_text_color_dark_bright;
+  background-color: $bleucustom_t1;
+  border-color: $bleucustom_t1;
+}
+
+.btn-outline-BleuCustom:focus, .btn-outline-BleuCustom.focus {
+  box-shadow: 0 0 0 0.2rem $bleucustom_shadow;
+}
+
+.btn-outline-BleuCustom.disabled, .btn-outline-BleuCustom:disabled {
+  color: $bleucustom_t1;
+  background-color: transparent;
+}
+
+.btn-outline-BleuCustom:not(:disabled):not(.disabled):active, .btn-outline-BleuCustom:not(:disabled):not(.disabled).active, .show > .btn-outline-BleuCustom.dropdown-toggle {
+  color: $bleucustom_text_color_dark_bright;
+  background-color: $bleucustom_t1;
+  border-color: $bleucustom_t1;
+}
+
+.btn-outline-BleuCustom:not(:disabled):not(.disabled):active:focus, .btn-outline-BleuCustom:not(:disabled):not(.disabled).active:focus, .show > .btn-outline-BleuCustom.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem $bleucustom_shadow;
+}
+
+.list-group-item-BleuCustom {
+  color: $bleucustom_t5;
+  background-color: $bleucustom_t4;
+}
+
+.list-group-item-BleuCustom.list-group-item-action:hover, .list-group-item-BleuCustom.list-group-item-action:focus {
+  color: $bleucustom_t5;
+  background-color: $bleucustom_t3;
+}
+
+.list-group-item-BleuCustom.list-group-item-action.active {
+  color: $bleucustom_text_color_dark_bright;
+  background-color: $bleucustom_t5;
+  border-color: $bleucustom_t5;
+}
+
+.table-BleuCustom,
+.table-BleuCustom > th,
+.table-BleuCustom > td {
+  background-color: $bleucustom_t3;
+}
+
+.table-hover .table-BleuCustom:hover {
+  background-color: $bleucustom_t3;
+}
+
+.table-hover .table-BleuCustom:hover > td,
+.table-hover .table-BleuCustom:hover > th {
+  background-color: $bleucustom_t3;
+}
+
+.text-BleuCustom {
+  color: $bleucustom_t1 !important;
+}
+
+a.text-BleuCustom:hover, a.text-BleuCustom:focus {
+  color: $bleucustom_t2 !important;
+}

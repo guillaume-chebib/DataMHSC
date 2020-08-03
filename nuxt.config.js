@@ -32,7 +32,8 @@ export default {
   ** Global CSS
   */
   css: [
-    '@/assets/styles/OrangeCustom.scss'
+    '@/assets/styles/OrangeCustom.scss',
+    '@/assets/styles/bleuCustom.scss',
   ],
 
   /*

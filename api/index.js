@@ -8,14 +8,14 @@ const users = require('./routes/users')
 const test = require('./routes/test')
 const classement = require('./routes/classement')
 const apiCall=require('./data/apiCall')
-
+const PlayerStats= require('./routes/playerStats')
 
 // Import API Routes
 
 app.use(users)
 app.use(test)
 app.use(classement)
-
+app.use(PlayerStats)
 // Export express app
 module.exports = app
 
@@ -29,4 +29,5 @@ if (require.main === module) {
 
 let call = schedule.scheduleJob('0 0 * * * *', async function () { //every hour runs the task
   await apiCall.writeClassement()
+  await apiCall.writePlayerStats()
 });
