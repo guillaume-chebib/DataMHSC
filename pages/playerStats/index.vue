@@ -1,24 +1,37 @@
 <template>
-  <p v-if="$fetchState.pending">Fetching posts...</p>
-  <p v-else-if="$fetchState.error">
-    Error while fetching posts: {{ $fetchState.error.message }}
-  </p>
-
-  <div class="container" v-else>
-    <line-chart
-      v-if="loaded"
-      :chartdata="chartdata"
-      :options="options"/>
-  </div>
+  <main>
+    <b-container fluid>
+      <b-container>
+        <b-row align-v="center">
+          <article class=" col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div>
+            <p v-if="$fetchState.pending" class="load">
+              <loading></loading>
+            </p>
+            <p v-else-if="$fetchState.error">
+              Erreur lors du chargement des données: {{ $fetchState.error.message }}
+            </p>
+            <div v-else>
+              <line-chart
+                v-if="loaded"
+                :chartdata="chartdata"
+                :options="options"/>
+            </div>
+            </div>
+          </article>
+        </b-row>
+      </b-container>
+    </b-container>
+  </main>
 </template>
 
 <script>
 import LineChart from '~/components/Chart.vue'
-
+import loading from '~/components/loadingAnimation'
 export default {
   layout: 'navbar',
   name: 'LineChartContainer',
-  components: {LineChart},
+  components: {LineChart,loading},
   data: () => ({
     loaded: false,
     chartdata: {labels:[],datasets:[{label:"Age des joueurs", borderColor: "#3cba9f",data:[]}]}
@@ -37,7 +50,6 @@ export default {
         //this.chartdata.labels=obj.lastname
       }
     }
-    console.log(this.chartdata.datasets[0])
   },
   async mounted() {
     this.loaded = false
@@ -57,3 +69,20 @@ export default {
 
 }
 </script>
+
+
+<style scoped>
+
+main{
+  margin-top: 50px;
+}
+.load {
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+</style>

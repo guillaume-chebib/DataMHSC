@@ -12,6 +12,7 @@ $orangecustom_t6: #bc7400;
 $orangecustom_t7: #db8700;
 $orangecustom_t8: #513200;
 $orangecustom_t9: #ffebcc;
+$mhsc_orange: #ea7118;
 
 $orangecustom_shadow: rgba(255, 158, 0, 0.5);
 $orangecustom_text_color_dark_bright: #212529;
@@ -88,15 +89,15 @@ button.bg-OrangeCustom:focus {
 }
 
 .btn-outline-OrangeCustom {
-  color: $orangecustom_t1;
+  color: $mhsc_orange;
   background-color: transparent;
-  border-color: $orangecustom_t1;
+  border-color: $mhsc_orange;
 }
 
 .btn-outline-OrangeCustom:hover {
-  color: $orangecustom_text_color_dark_bright;
-  background-color: $orangecustom_t1;
-  border-color: $orangecustom_t1;
+  color: white;
+  background-color: $mhsc_orange;
+  border-color: $mhsc_orange;
 }
 
 .btn-outline-OrangeCustom:focus, .btn-outline-OrangeCustom.focus {

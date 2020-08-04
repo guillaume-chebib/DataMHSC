@@ -1,44 +1,28 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        nuxt-express
-      </h1>
-      <div>
-        {{ test }}
-        <div class="links">
-          <nuxt-link to="/users" class="button--green">Users List</nuxt-link>
-        </div>
-      </div>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
-  </div>
+  <main>
+    <b-container fluid>
+      <b-container>
+        <b-row align-v="center">
+          <b-col lg="4" md="4" sm="12" xs="12" class="test">One of three columns</b-col>
+          <b-col lg="4" md="4" sm="12" xs="12" class="test">One of three columns</b-col>
+          <b-col lg="4" md="4" sm="12" xs="12" class="test">One of three columns</b-col>
+        </b-row>
+      </b-container>
+    </b-container>
+  </main>
 </template>
 <script>
+
+
+
 export default {
-  async asyncData ({ $http }) {
-    const test = await $http.$get('/api/test')
+  layout: 'navbar',
+  head () {
     return {
-      test
+      title: 'DataMHSC'
     }
+  },
+  components:{
   }
 }
 </script>
@@ -51,6 +35,9 @@ export default {
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+.test{
+  background-color: red;
 }
 
 .title {

@@ -1,35 +1,36 @@
 <template>
   <main>
-    <section>
-      <div class="container-fluid">
-        <div class="container">
-          <div class="row-align-self-center mb-4">
-            <article class=" col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <div>
-            <p v-if="$fetchState.pending">Fetching posts...</p>
-            <p v-else-if="$fetchState.error">
-              Error while fetching posts: {{ $fetchState.error.message }}
-            </p>
-            <ul class="classement" v-else>
-              <template v-for='team in classement.api.standings'>
-                <b-table responsive="true" striped hover :items="team" :fields="field" :head-variant="headVariant">
-                  <template v-slot:cell(logo)="data">
-                    <b-avatar  size="sm" square variant="light" v-bind:src="data.item.logo"></b-avatar>
-                  </template>
-                </b-table>
-              </template>
-            </ul>
-          </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
+    <b-container fluid>
+      <b-container>
+        <b-row align-v="center">
+          <article class=" col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div>
+
+              <p v-if="$fetchState.pending" class="load">
+                <loading></loading>
+              </p>
+              <p v-else-if="$fetchState.error">
+                Erreur lors du chargement des données: {{ $fetchState.error.message }}
+              </p>
+
+              <b-table v-else responsive="true" striped hover :items="classement" :fields="field">
+                <template v-slot:cell(logo)="data">
+                  <b-avatar  size="sm" square variant="light" v-bind:src="data.item.logo"></b-avatar>
+                </template>
+              </b-table>
+
+            </div>
+          </article>
+        </b-row>
+      </b-container>
+    </b-container>
   </main>
 </template>
 
 <script>
+  import loading from '~/components/loadingAnimation'
   export default {
+
     layout: 'navbar',
     data(){
       return {
@@ -80,7 +81,6 @@
           },
 
         ],
-        headVariant: "null",
         classement: []
       }
     },
@@ -100,7 +100,7 @@
           }
         }
       }
-      this.classement=data
+      this.classement=data.api.standings[0]
     },
     head () {
       return {
@@ -112,37 +112,24 @@
     },
     computed:{
 
+    },
+    components:{
+      loading
     }
   }
 </script>
 
 <style scoped>
-  .container {
-    margin: 0 auto;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-  .title
-  {
-    margin: 30px 0;
-  }
-  .users
-  {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  .user
-  {
-    margin: 10px 0;
-  }
-  .button
-  {
-    display: inline-block;
-    margin-top: 50px;
-  }
+main{
+  margin-top: 50px;
+}
+.load {
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
 </style>

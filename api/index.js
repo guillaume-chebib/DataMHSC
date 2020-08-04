@@ -4,16 +4,12 @@ let schedule = require('node-schedule');
 const app = express()
 
 // Require API routes
-const users = require('./routes/users')
-const test = require('./routes/test')
 const classement = require('./routes/classement')
 const apiCall=require('./data/apiCall')
 const PlayerStats= require('./routes/playerStats')
 
 // Import API Routes
 
-app.use(users)
-app.use(test)
 app.use(classement)
 app.use(PlayerStats)
 // Export express app
