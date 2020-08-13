@@ -13,7 +13,7 @@
                 Erreur lors du chargement des données: {{ $fetchState.error.message }}
               </p>
 
-              <b-table v-else responsive="true" striped hover :items="classement" :fields="field">
+              <b-table v-else responsive="true" striped hover :items="classement" :fields="field" table-variant="light">
                 <template v-slot:cell(logo)="data">
                   <b-avatar  size="sm" square variant="light" v-bind:src="data.item.logo"></b-avatar>
                 </template>

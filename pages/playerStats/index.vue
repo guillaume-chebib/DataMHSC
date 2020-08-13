@@ -3,7 +3,7 @@
     <b-container fluid>
       <b-container>
         <b-row align-v="center">
-          <article class=" col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <article class=" col-lg-6 col-md-12 col-sm-12 col-xs-12">
             <div>
             <p v-if="$fetchState.pending" class="load">
               <loading></loading>
@@ -11,7 +11,7 @@
             <p v-else-if="$fetchState.error">
               Erreur lors du chargement des données: {{ $fetchState.error.message }}
             </p>
-            <div v-else>
+            <div id="graphe" v-else>
               <line-chart
                 v-if="loaded"
                 :chartdata="chartdata"
@@ -34,8 +34,9 @@ export default {
   components: {LineChart,loading},
   data: () => ({
     loaded: false,
-    chartdata: {labels:[],datasets:[{label:"Age des joueurs", borderColor: "#3cba9f",data:[]}]}
+    chartdata: {labels:[],datasets:[{label:"Age des joueurs", borderColor: "#3cba9f",data:[],backgroundColor: 'grey'}]}
   }),
+
   async fetch() {
     const data = await this.$http.$get('/api/playerStats')
     let players =data.api.players
@@ -83,6 +84,11 @@ main{
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+#graphe{
+  //background-color: white;
+  //opacity: 90%;
 }
 
 </style>

@@ -23,6 +23,9 @@ html {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
 }
+body{
+  background: linear-gradient(180deg, rgba(10,46,83,1) 31%, rgba(255,149,0,1) 100%) no-repeat center center fixed;
+}
 
 *,
 *::before,

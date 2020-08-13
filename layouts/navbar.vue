@@ -3,7 +3,7 @@
     <div>
       <b-navbar toggleable="lg" type="dark" variant="BleuCustom">
         <b-navbar-brand nuxt-link to="/">
-          <img id="image" src="../assets/image/logo1.png" alt="Logo">
+          <cld-image publicId="logo1_wubmws.png" width="30"  height="30" ></cld-image>
         </b-navbar-brand>
 
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -39,14 +39,16 @@
 
 
 <script>
+import Vue from "vue"
+import Cloudinary from "cloudinary-vue";
+Vue.use(Cloudinary, {
+  configuration: { cloudName: "ddg48u9sp" }
+});
 export default {
 name: "navbar"
 }
 </script>
 
 <style scoped>
-#image{
-  width: 30px;
-  height: 30px;
-}
+
 </style>
