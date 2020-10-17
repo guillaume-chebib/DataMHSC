@@ -16,11 +16,20 @@
           >
 
             <b-carousel-slide
-              img-src="https://res.cloudinary.com/ddg48u9sp/image/upload/v1597329134/vignettemaillot.jpg"
+              img-src="https://res.cloudinary.com/ddg48u9sp/image/upload/v1597329134/sonya.jpg"
             ></b-carousel-slide>
             <b-carousel-slide
               caption="Omlin signe à Montpellier"
-              img-src="https://res.cloudinary.com/ddg48u9sp/image/upload/v1597329134/vignette_omlin.jpg"
+              img-src="https://res.cloudinary.com/ddg48u9sp/image/upload/v1597329134/cornelia.jpg"
+            ></b-carousel-slide>
+            <b-carousel-slide
+              img-src="https://res.cloudinary.com/ddg48u9sp/image/upload/v1597329134/ep34.jpg"
+            ></b-carousel-slide>
+            <b-carousel-slide
+              img-src="https://res.cloudinary.com/ddg48u9sp/image/upload/v1597329134/roy.jpg"
+            ></b-carousel-slide>
+            <b-carousel-slide
+              img-src="https://res.cloudinary.com/ddg48u9sp/image/upload/v1597329134/faiza.jpg"
             ></b-carousel-slide>
           </b-carousel>
         </div>
@@ -33,17 +42,23 @@
           <b-col lg="4" md="4" sm="12" xs="12" class="test">One of three columns</b-col>
           <b-col lg="12" md="12" sm="12" xs="12"><b-button v-on:click="openCloudinaryWidget">Greet</b-button></b-col>
           <cld-image cloudName="ddg48u9sp" publicId="PNG_transparency_demonstration_1_jjhsfx.png"  />
-        </b-row>-->
+        </b-row>
+        <b-embed
+          type="video"
+          aspect="16by9"
+          src="https://res.cloudinary.com/ddg48u9sp/video/upload/v1597956988/Generique_light.mp4"
+          allowfullscreen
+          controls
+        ></b-embed>-->
+        <cld-video public-id="Generique_light"   controls="controls" width="100%">
+        </cld-video>
+
       </b-container>
     </b-container>
+
   </main>
 </template>
 <script>
-import Vue from "vue"
-import Cloudinary from "cloudinary-vue";
-Vue.use(Cloudinary, {
-  configuration: { cloudName: "ddg48u9sp" }
-});
 
 
 export default {
@@ -51,8 +66,12 @@ export default {
   data (){
     return {
       slide: 0,
-      sliding: null
+      sliding: null,
     }
+  },
+  async fetch(){
+    /*const url = this.$cloudinary()
+      .url('sample', { crop: 'scale', width: 200 })*/
   },
   head () {
     return {
@@ -73,11 +92,11 @@ export default {
           cloudName: "ddg48u9sp",
           uploadPreset: "wxpgd7vw",
           multiple: false,
-          maxFiles: 1,
+          maxFiles: 5,
           cropping: true,
           croppingAspectRatio: 1,
           croppingCoordinateMode: "face",
-          clientAllowedFormats: ["png", "gif", "jpeg"]
+
         },
         (error, result) => {
           if (!error && result && result.event === "success") {
@@ -103,7 +122,7 @@ export default {
 <style scoped>
 
 #carousel-1{
-  border: 2px solid;
+  border: 1px solid;
   border-image: linear-gradient(180deg, rgba(10,46,83,1) 31%, rgba(255,149,0,1) 100%) 1;
 }
 .container {

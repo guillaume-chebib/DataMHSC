@@ -7,7 +7,7 @@ let request = require("request");
 async function writeClassement() {
   let options = {
     method: 'GET',
-    url: 'https://api-football-v1.p.rapidapi.com/v2/leagueTable/525',
+    url: 'https://api-football-v1.p.rapidapi.com/v2/leagueTable/2664',
     headers: {
       'x-rapidapi-host': 'api-football-v1.p.rapidapi.com',
       'x-rapidapi-key': process.env.KEY_API_FOOTBALL
@@ -40,7 +40,7 @@ async function readClassement() {
 async function writePlayerStats() {
   let options = {
     method: 'GET',
-    url: 'https://api-football-v1.p.rapidapi.com/v2/players/team/82/2019-2020',
+    url: 'https://api-football-v1.p.rapidapi.com/v2/players/team/82/2020-2021',
     headers: {
       'x-rapidapi-host': 'api-football-v1.p.rapidapi.com',
       'x-rapidapi-key': process.env.KEY_API_FOOTBALL

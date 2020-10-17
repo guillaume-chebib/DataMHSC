@@ -45,8 +45,7 @@ export default {
   ** Plugins to load before mounting the App
   ** https://nuxtjs.org/guide/plugins
   */
-  plugins: [
-  ],
+  plugins: [  ],
 
   /*
   ** Auto import components
@@ -69,7 +68,8 @@ export default {
   modules: [
     // Doc: https://http.nuxtjs.org
     '@nuxt/http',
-    'bootstrap-vue/nuxt'
+    'bootstrap-vue/nuxt',
+    '@nuxtjs/cloudinary'
   ],
 
 
@@ -90,4 +90,9 @@ export default {
   bootstrapVue: {
     icons: true // Install the IconsPlugin (in addition to BootStrapVue plugin
   },
+  cloudinary: {
+    cloudName: 'ddg48u9sp',
+    useComponent: true,
+    privateCDN: false
+  }
 }

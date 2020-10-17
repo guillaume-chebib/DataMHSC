@@ -39,11 +39,7 @@
 
 
 <script>
-import Vue from "vue"
-import Cloudinary from "cloudinary-vue";
-Vue.use(Cloudinary, {
-  configuration: { cloudName: "ddg48u9sp" }
-});
+
 export default {
 name: "navbar"
 }
